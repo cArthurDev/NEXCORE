@@ -30,7 +30,7 @@ jobs:
 
       - name: Gerar instalador
         shell: pwsh
-        run: .\criar-instalador.bat --no-pause
+        run: pwsh -NoProfile -File .\installer\Build-Installer.ps1
 
       - name: Publicar versão mais recente
         if: startsWith(github.ref, 'refs/heads/')
