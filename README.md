@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Assets/logo-dark.png" alt="NEXCORE" width="360">
+<img src="Assets/logo.png" alt="NEXCORE" width="360">
 
 ### Diagnóstico, desempenho e controle do seu PC Windows
 
