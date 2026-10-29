@@ -1,0 +1,62 @@
+<WixLocalization Culture="pt-br" Language="1046" xmlns="http://wixtoolset.org/schemas/v4/wxl">
+  <String Id="Caption" Value="Instalação do [WixBundleName]"/>
+  <String Id="Title" Value="[WixBundleName]"/>
+  <String Id="CheckingForUpdatesLabel" Value="Verificando atualizações"/>
+  <String Id="UpdateButton" Value="&amp;Atualizar para [WixStdBAUpdateAvailable]"/>
+  <String Id="InstallVersion" Value="Versão [WixBundleVersion]"/>
+  <String Id="ConfirmCancelMessage" Value="Deseja cancelar a instalação?"/>
+  <String Id="ExecuteUpgradeRelatedBundleMessage" Value="Versão anterior"/>
+  <String Id="HelpHeader" Value="Ajuda da instalação"/>
+  <String Id="HelpText" Value="/install, /repair, /uninstall: instalar, reparar ou desinstalar.&#xA;/layout [pasta]: extrair uma cópia local.&#xA;/passive ou /quiet: interface reduzida ou silenciosa.&#xA;/norestart: não reiniciar automaticamente.&#xA;/log arquivo.txt: gravar um registro da instalação."/>
+  <String Id="HelpCloseButton" Value="&amp;Fechar"/>
+  <String Id="InstallAcceptCheckbox" Value="&amp;Aceito os termos da licença"/>
+  <String Id="InstallOptionsButton" Value="&amp;Opções"/>
+  <String Id="InstallInstallButton" Value="&amp;Instalar"/>
+  <String Id="InstallCancelButton" Value="&amp;Cancelar"/>
+  <String Id="OptionsHeader" Value="Opções da instalação"/>
+  <String Id="OptionsLocationLabel" Value="Pasta de instalação:"/>
+  <String Id="OptionsBrowseButton" Value="&amp;Procurar"/>
+  <String Id="OptionsOkButton" Value="&amp;OK"/>
+  <String Id="OptionsCancelButton" Value="&amp;Cancelar"/>
+  <String Id="ProgressHeader" Value="Instalando o NEXCORE"/>
+  <String Id="ProgressLabel" Value="Processando:"/>
+  <String Id="OverallProgressPackageText" Value="Preparando…"/>
+  <String Id="ProgressCancelButton" Value="&amp;Cancelar"/>
+  <String Id="ModifyHeader" Value="Manutenção do NEXCORE"/>
+  <String Id="ModifyRepairButton" Value="&amp;Reparar"/>
+  <String Id="ModifyUninstallButton" Value="&amp;Desinstalar"/>
+  <String Id="ModifyCancelButton" Value="&amp;Cancelar"/>
+  <String Id="SuccessHeader" Value="Operação concluída"/>
+  <String Id="SuccessCacheHeader" Value="Arquivos preparados"/>
+  <String Id="SuccessInstallHeader" Value="Instalação concluída"/>
+  <String Id="SuccessLayoutHeader" Value="Extração concluída"/>
+  <String Id="SuccessModifyHeader" Value="Alteração concluída"/>
+  <String Id="SuccessRepairHeader" Value="Reparação concluída"/>
+  <String Id="SuccessUninstallHeader" Value="Desinstalação concluída"/>
+  <String Id="SuccessUnsafeUninstallHeader" Value="Desinstalação concluída"/>
+  <String Id="SuccessLaunchButton" Value="&amp;Abrir"/>
+  <String Id="SuccessRestartText" Value="Reinicie o computador antes de usar o aplicativo."/>
+  <String Id="SuccessUninstallRestartText" Value="Reinicie o computador para concluir a remoção."/>
+  <String Id="SuccessRestartButton" Value="&amp;Reiniciar"/>
+  <String Id="SuccessCloseButton" Value="&amp;Fechar"/>
+  <String Id="FailureHeader" Value="Não foi possível concluir"/>
+  <String Id="FailureCacheHeader" Value="Falha ao preparar arquivos"/>
+  <String Id="FailureInstallHeader" Value="Falha na instalação"/>
+  <String Id="FailureLayoutHeader" Value="Falha na extração"/>
+  <String Id="FailureModifyHeader" Value="Falha na alteração"/>
+  <String Id="FailureRepairHeader" Value="Falha na reparação"/>
+  <String Id="FailureUninstallHeader" Value="Falha na desinstalação"/>
+  <String Id="FailureUnsafeUninstallHeader" Value="Falha na desinstalação"/>
+  <String Id="FailureHyperlinkLogText" Value="Corrija o problema e tente novamente. Consulte o &lt;a href=&quot;#&quot;&gt;registro da instalação&lt;/a&gt; para mais detalhes."/>
+  <String Id="FailureRestartText" Value="Reinicie o computador para concluir a reversão das alterações."/>
+  <String Id="FailureRestartButton" Value="&amp;Reiniciar"/>
+  <String Id="FailureCloseButton" Value="&amp;Fechar"/>
+  <String Id="FilesInUseTitle" Value="Arquivos em uso"/>
+  <String Id="FilesInUseLabel" Value="Estes aplicativos estão usando arquivos que precisam ser atualizados:"/>
+  <String Id="FilesInUseNetfxCloseRadioButton" Value="Fechar os &amp;aplicativos."/>
+  <String Id="FilesInUseCloseRadioButton" Value="Fechar os &amp;aplicativos e tentar reabri-los."/>
+  <String Id="FilesInUseDontCloseRadioButton" Value="&amp;Manter os aplicativos abertos. Será necessário reiniciar."/>
+  <String Id="FilesInUseRetryButton" Value="&amp;Tentar novamente"/>
+  <String Id="FilesInUseIgnoreButton" Value="&amp;Ignorar"/>
+  <String Id="FilesInUseExitButton" Value="&amp;Sair"/>
+</WixLocalization>

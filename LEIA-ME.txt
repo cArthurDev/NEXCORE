@@ -1,0 +1,27 @@
+NEXCORE
+=============
+
+Ferramenta de diagnóstico de hardware: informações do sistema, sensores, placa de vídeo,
+FPS estimado em jogos, detector de gargalo, overlay de FPS, NEXCORE BENCH (benchmarks de CPU, GPU, memória e disco)
+NEXCORE OTIMIZA (limpeza de memória e ajustes para jogos) e stress test de CPU / RAM / GPU.
+
+REQUISITOS
+- Windows 10 ou 11, 64 bits. Não precisa instalar o .NET (já vem dentro do .exe).
+- Para temperatura e consumo da CPU, instale o driver PawnIO (uma vez só):
+      winget install namazso.PawnIO
+- O aplicativo abre com a permissão do usuário. Algumas funções e sensores exigem
+  reabrir em modo administrador; o botão CORRIGIR oferece essa opção.
+- Se a temperatura/consumo da CPU não aparecerem, o menu lateral mostra o motivo e um
+  botão CORRIGIR, que instala o PawnIO com um clique. Depois feche e abra o programa.
+  Se instalou o PawnIO e mesmo assim não aparecer, reinicie o PC.
+
+COMO USAR
+- Abra o NEXCORE.exe. Na primeira vez ele demora alguns segundos para iniciar.
+- Se o Windows mostrar "O Windows protegeu o computador", clique em "Mais informações"
+  e depois em "Executar assim mesmo" (o programa não tem assinatura digital paga).
+- Overlay: Ctrl + Shift + O liga e desliga.
+
+OBSERVAÇÕES
+- Placas NVIDIA mostram mais detalhes (VBIOS, limites de energia, CUDA).
+- Configurações e histórico ficam em %AppData%\NEXCORE (não vão junto com o .exe).
+- Use os stress tests com o limite de temperatura ligado e boa ventilação.

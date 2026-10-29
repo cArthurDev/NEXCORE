@@ -1,0 +1,39 @@
+<Window x:Class="NEXCORE.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NEXCORE overlay" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ShowInTaskbar="False" ShowActivated="False" ResizeMode="NoResize" Focusable="False"
+        SizeToContent="WidthAndHeight" UseLayoutRounding="True" TextOptions.TextFormattingMode="Display">
+    <Border x:Name="Box" Background="#C8000000" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="4" Padding="12,9">
+        <Border.LayoutTransform>
+            <ScaleTransform x:Name="Scale" ScaleX="1" ScaleY="1"/>
+        </Border.LayoutTransform>
+        <StackPanel TextElement.FontFamily="Cascadia Mono, Consolas" TextElement.FontSize="12" TextElement.Foreground="#F5F5F5">
+            <!-- FPS em destaque (cada parte aparece só se escolhida na aba Overlay) -->
+            <StackPanel x:Name="OFpsRow" Orientation="Horizontal">
+                <TextBlock x:Name="OFps" Text="—" FontSize="24" FontWeight="Bold"/>
+                <TextBlock x:Name="OFpsUnit" Text=" FPS" Foreground="#8C8C8C" VerticalAlignment="Bottom" Margin="0,0,0,4"/>
+                <TextBlock x:Name="OFrameTime" Text="" Foreground="#8C8C8C" VerticalAlignment="Bottom" Margin="12,0,0,4"/>
+            </StackPanel>
+            <TextBlock x:Name="OLow" Text="1% low —" Foreground="#8C8C8C"/>
+            <!-- Gráfico de frametime -->
+            <Canvas x:Name="OGraph" Width="190" Height="30" Margin="0,6,0,4" ClipToBounds="True"/>
+            <!-- Linhas de sensores: GPU, VRAM, CPU, RAM... montadas pelo que foi escolhido -->
+            <ItemsControl x:Name="ORows" Margin="0,2,0,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Label}" Foreground="#8C8C8C"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Value}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <TextBlock x:Name="OGame" Text="" Foreground="#5A5A5A" FontSize="10" Margin="0,5,0,0"/>
+        </StackPanel>
+    </Border>
+</Window>

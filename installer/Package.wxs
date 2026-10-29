@@ -1,0 +1,46 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <!-- Keep this UpgradeCode stable across releases. -->
+  <Package Name="NEXCORE" Manufacturer="cArthurDev (Arthur Souza)" Version="$(var.AppVersion)"
+           UpgradeCode="76B0E38C-4851-4A8B-A29B-EB3D4C3AD054" Language="1046" Codepage="1252" Scope="perMachine">
+    <SummaryInformation Description="Instalador do NEXCORE" Manufacturer="cArthurDev (Arthur Souza)"/>
+    <MajorUpgrade DowngradeErrorMessage="Uma versão mais recente do NEXCORE já está instalada." AllowSameVersionUpgrades="yes"/>
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high"/>
+    <!-- MSI's legacy WindowsBuild value is compatibility-masked on newer Windows. -->
+    <Property Id="NEXCORE_WINDOWS_BUILD" Secure="yes">
+      <RegistrySearch Id="WindowsCurrentBuild" Root="HKLM" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+                      Name="CurrentBuildNumber" Type="raw" Bitness="always64"/>
+    </Property>
+    <Launch Condition="Installed OR (VersionNT64 AND NEXCORE_WINDOWS_BUILD &gt;= 10240)" Message="O NEXCORE requer Windows 10 ou 11 de 64 bits."/>
+    <!-- Advertised shortcuts require a PE icon resource with the target's .exe extension. -->
+    <Icon Id="NexcoreShortcut.exe" SourceFile="$(var.BuildDir)\NexcoreShortcut.exe"/>
+    <Property Id="ARPPRODUCTICON" Value="NexcoreShortcut.exe"/>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="NEXCORE · cArthurDev (Arthur Souza). Use os atalhos para abrir o aplicativo."/>
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.BuildDir)\License.rtf"/>
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER"/>
+    <UIRef Id="WixUI_ErrorProgressText"/>
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="NEXCORE">
+        <Component Id="Application" Guid="*">
+          <File Id="ApplicationExe" Source="$(var.PublishDir)\NEXCORE.exe" KeyPath="yes">
+            <Shortcut Id="StartMenuShortcut" Directory="NexcoreMenuFolder" Name="NEXCORE" WorkingDirectory="INSTALLFOLDER" Icon="NexcoreShortcut.exe" IconIndex="0" Advertise="yes"/>
+            <Shortcut Id="DesktopAppShortcut" Directory="DesktopFolder" Name="NEXCORE" WorkingDirectory="INSTALLFOLDER" Icon="NexcoreShortcut.exe" IconIndex="0" Advertise="yes"/>
+          </File>
+          <RemoveFolder Id="RemoveStartMenuFolder" Directory="NexcoreMenuFolder" On="uninstall"/>
+        </Component>
+        <Component Id="Documentation" Guid="*">
+          <File Id="Readme" Source="$(var.PublishDir)\LEIA-ME.txt" KeyPath="yes"/>
+        </Component>
+        <Component Id="LicenseFile" Guid="*"><File Source="$(var.ProjectRoot)\LICENSE" KeyPath="yes"/></Component>
+        <Component Id="ThirdPartyNotices" Guid="*"><File Source="$(var.BuildDir)\THIRD-PARTY-NOTICES.txt" KeyPath="yes"/></Component>
+      </Directory>
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="NexcoreMenuFolder" Name="NEXCORE"/>
+    </StandardDirectory>
+    <StandardDirectory Id="DesktopFolder"/>
+    <Feature Id="Main" Title="NEXCORE" Level="1">
+      <ComponentRef Id="Application"/><ComponentRef Id="Documentation"/>
+      <ComponentRef Id="LicenseFile"/><ComponentRef Id="ThirdPartyNotices"/>
+    </Feature>
+  </Package>
+</Wix>

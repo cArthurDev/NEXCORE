@@ -1,0 +1,14 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+  <!-- Keep this UpgradeCode stable across releases. -->
+  <Bundle Name="NEXCORE" Version="$(var.AppVersion)" Manufacturer="cArthurDev (Arthur Souza)"
+          UpgradeCode="E8D28B3D-51EA-49AF-802D-9BDF00B737F6" IconSourceFile="$(var.ProjectRoot)\Assets\app.ico"
+          Compressed="yes">
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication Theme="rtfLicense" LicenseFile="$(var.BuildDir)\License.rtf"
+          LogoFile="$(var.BuildDir)\InstallerLogo.bmp" LocalizationFile="$(var.ProjectRoot)\installer\Bootstrapper.pt-br.wxl" SuppressOptionsUI="yes"/>
+    </BootstrapperApplication>
+    <Chain>
+      <MsiPackage Id="NexcoreApplication" SourceFile="$(var.BuildDir)\NEXCORE-$(var.AppVersion)-x64.msi" Visible="no" Vital="yes"/>
+    </Chain>
+  </Bundle>
+</Wix>

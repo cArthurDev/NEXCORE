@@ -1,0 +1,2 @@
+# Drivers embutidos: nunca converter fins de linha (o .cat assina o conteúdo exato de .inf/.sys/.dll)
+Drivers/** -text

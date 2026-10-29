@@ -1,0 +1,27 @@
+# Build
+bin/
+obj/
+publish/
+NEXCORE-dist/
+*.exe
+*.dll
+*.pdb
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Local
+*.log
+
+.tools/
+.wix/
+installer/build/
+installer/output/
+**/bin/
+**/obj/
+
+# Drivers seriais embutidos (NEXCORE MAKER): as DLLs fazem parte dos pacotes assinados
+!Drivers/**
