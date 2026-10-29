@@ -45,18 +45,22 @@ práticas para jogos, manutenção e criação com Arduino.
 
 ### Usuários
 
-Não é necessário baixar o código-fonte nem instalar o .NET. Depois que o novo
-repositório for criado, publique o executável portátil na área de Releases e
-adicione aqui os links diretos para o `.exe` e o `.zip`.
+Não é necessário baixar o código-fonte nem instalar o .NET. Baixe o instalador
+`NEXCORE-Setup.exe` na área de
+[**Releases**](../../releases/latest). Ele instala o aplicativo, cria atalhos
+no menu Iniciar e na área de trabalho e inclui o .NET necessário.
 
-O `.exe` será uma versão portátil independente para Windows x64. O `.zip`
-deverá incluir o executável, `LEIA-ME.txt` e `LICENSE`. O pacote de instalação
-também poderá criar atalhos no menu Iniciar e na área de trabalho.
+Depois que o novo repositório for criado, você também poderá colocar aqui um
+link direto no formato:
+
+```text
+https://github.com/cArthurDev/NEXCORE/releases/latest/download/NEXCORE-Setup.exe
+```
 
 Após baixar:
 
-1. Extraia o `.zip` ou execute o instalador.
-2. Abra `NEXCORE.exe`.
+1. Execute `NEXCORE-Setup.exe`.
+2. Siga o instalador em português e abra o NEXCORE pelo atalho criado.
 3. Se o Windows exibir o SmartScreen, clique em **Mais informações** e depois
    em **Executar assim mesmo**. O executável ainda não possui assinatura
    Authenticode.
@@ -170,18 +174,14 @@ dotnet build NEXCORE.csproj -c Release
 dotnet run --project NEXCORE.csproj
 ```
 
-Para gerar uma versão portátil self-contained para Windows x64:
-
-```powershell
-.\publicar.bat
-```
-
-O resultado é criado em `..\NEXCORE-dist`, com `NEXCORE.exe`, `LEIA-ME.txt` e
-`LICENSE`. Para gerar o instalador, execute:
+Para gerar o instalador:
 
 ```powershell
 .\criar-instalador.bat
 ```
+
+O resultado é criado em `installer\output`, com `NEXCORE-Setup.exe`,
+`NEXCORE-Setup.sha256` e o pacote MSI alternativo.
 
 Detalhes de WiX, validação, atualização e arquivos gerados estão em
 [installer/README.md](installer/README.md). Os drivers seriais embutidos estão
